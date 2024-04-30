@@ -5,6 +5,13 @@ public class Note {
     private String content;
 
     public Note(String id, String title, String content) {
+        for (Note note : Main.list)
+        {
+            if (note.getId().equals(id))
+            {
+                throw new IllegalArgumentException();
+            }
+        }
         this.id = id;
         this.title = title;
         this.content = content;
