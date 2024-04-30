@@ -2,10 +2,10 @@ import java.util.List;
 
 public class NotesManager {
 
-    public String getNotesInAFormattedWay(List<Note> list)
+    public String getNotesInAFormattedWay()
     {
         String formattedText = "";
-        for (Note note : list)
+        for (Note note : Main.list)
         {
             formattedText += note.toString() + "\n";
         }
@@ -21,6 +21,9 @@ public class NotesManager {
             {
                 Main.list.remove(note);
                 isExist = true;
+                System.out.println("You have deleted the note with id: "
+                        + note.getId());
+                break;
             }
         }
         if (!isExist)
